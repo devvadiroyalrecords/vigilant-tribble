@@ -2,6 +2,15 @@
 
 This repository does **not** support building tools for fraud, impersonation, deepfakes-for-deception, phishing, stalking, or financial exploitation.
 
+## Run the app
+
+```bash
+npm install
+npm start
+```
+
+Then open `http://localhost:3000`.
+
 ## Safe project direction
 
 Build a **longform content creation platform** that helps users publish polished 10–30 minute pieces from one prompt plus source materials.
