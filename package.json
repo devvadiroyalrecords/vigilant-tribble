@@ -1,0 +1,14 @@
+{
+  "name": "vigilant-tribble",
+  "version": "1.0.0",
+  "description": "This repository does **not** support building tools for fraud, impersonation, deepfakes-for-deception, phishing, stalking, or financial exploitation.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "build": "node --check src/server.js && node --check public/app.js",
+    "test": "node -e \"console.log('No tests configured')\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

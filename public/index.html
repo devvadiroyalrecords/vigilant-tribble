@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Longform Builder</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Longform Builder</h1>
+      <p>Publish a polished 10–30 minute piece from one prompt + source materials.</p>
+    </header>
+
+    <main>
+      <section class="onboarding card">
+        <h2>Onboarding</h2>
+        <div class="grid-3">
+          <label>
+            Template Library
+            <select id="template">
+              <option value="thought-leadership">Thought Leadership</option>
+              <option value="deep-dive">Deep Dive Explainer</option>
+              <option value="creator-script">Creator Video Script</option>
+              <option value="podcast-feature">Podcast Feature</option>
+            </select>
+          </label>
+          <label>
+            Start from
+            <select id="importType">
+              <option value="transcript">Transcript</option>
+              <option value="docs">Docs</option>
+              <option value="url">URL</option>
+            </select>
+          </label>
+          <label>
+            Import value
+            <input id="importValue" type="text" placeholder="Paste transcript/docs/URL source" />
+          </label>
+        </div>
+        <div class="row">
+          <button id="wizardBtn">Run first-project wizard</button>
+          <span id="wizardState">Wizard not started</span>
+        </div>
+      </section>
+
+      <section class="context card">
+        <h2>Context Memory Controls</h2>
+        <div class="grid-2">
+          <label>Project brief <textarea id="projectBrief"></textarea></label>
+          <label>Style guide <textarea id="styleGuide"></textarea></label>
+          <label>Banned claims <textarea id="bannedClaims" placeholder="One claim per line"></textarea></label>
+          <label>Source notes <textarea id="sourceNotes"></textarea></label>
+        </div>
+      </section>
+
+      <section class="workflows card">
+        <h2>Core Workflows (v1)</h2>
+        <div class="row wrap">
+          <label>Prompt <input id="prompt" type="text" placeholder="Describe your piece in one prompt" /></label>
+          <label>Output
+            <select id="outputFormat">
+              <option value="article">Article</option>
+              <option value="newsletter">Newsletter series</option>
+              <option value="podcast">Podcast script</option>
+              <option value="video">Video script with timestamps</option>
+            </select>
+          </label>
+          <button id="draftBtn">1) Draft script</button>
+          <button id="assembleBtn">3) Final assembly/export</button>
+          <button id="markReadyBtn">Mark publish-ready</button>
+        </div>
+      </section>
+
+      <section class="editor card">
+        <h2>Chapter-first Editor</h2>
+        <div class="panels">
+          <aside class="panel left">
+            <h3>Outline</h3>
+            <ul id="outline"></ul>
+            <div class="row">
+              <input id="newChapter" type="text" placeholder="New chapter title" />
+              <button id="addChapterBtn">Add</button>
+            </div>
+          </aside>
+
+          <section class="panel middle">
+            <h3>Section cards</h3>
+            <div id="sectionCards"></div>
+          </section>
+
+          <section class="panel right">
+            <h3>Full draft</h3>
+            <textarea id="fullDraft"></textarea>
+            <div class="row">
+              <button id="structurePassBtn">Structure pass</button>
+              <button id="repetitionPassBtn">Repetition cleanup</button>
+              <button id="factPassBtn">Factual consistency check</button>
+              <button id="tonePassBtn">Tone unification</button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="trust card">
+        <h2>Trust, Safety, and Compliance</h2>
+        <ul>
+          <li>Attribution included in exported output.</li>
+          <li>Only consented input material is accepted.</li>
+          <li>Anti-deception guardrails block prohibited categories.</li>
+          <li>All generation and edits are audit-logged in-session.</li>
+        </ul>
+      </section>
+
+      <section class="metrics card">
+        <h2>Beta Metrics</h2>
+        <div class="grid-3">
+          <div>Time-to-first-draft: <strong id="timeToDraft">not recorded</strong></div>
+          <div>Edits-per-1k words: <strong id="editsPer1k">0</strong></div>
+          <div>Publish-ready rate: <strong id="publishRate">0%</strong></div>
+        </div>
+      </section>
+
+      <section class="log card">
+        <h2>Audit Log</h2>
+        <ul id="auditLog"></ul>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
